@@ -1,41 +1,41 @@
-import React from "react";
-import { useParams } from "react-router-dom";
+import React from 'react';
+import { useParams } from 'react-router-dom';
 
-import PlaceList from "../components/PlaceList";
+import PlaceList from '../components/PlaceList';
 
 const DUMMY_PLACES = [
   {
-    id: "p1",
-    title: "Empire",
-    description: "mah",
+    id: 'p1',
+    title: 'Empire State Building',
+    description: 'One of the most famous sky scrapers in the world!',
     imageUrl:
-      "https://www.citybreak.com/sites/cb_citybreak/files/styles/slide_large/public/ben-o-bro-wpU4veNGnHg-unsplash.jpg?h=41f55a5b&itok=xr1okfZF",
-    address: "New York Sjedinjene Američke Države",
+      'https://upload.wikimedia.org/wikipedia/commons/thumb/d/df/NYC_Empire_State_Building.jpg/640px-NYC_Empire_State_Building.jpg',
+    address: '20 W 34th St, New York, NY 10001',
     location: {
-      lat: 40.5645845,
-      lng: -74.216858,
+      lat: 40.7484405,
+      lng: -73.9878584
     },
-    creator: "u1",
+    creator: 'u1'
   },
   {
-    id: "p1",
-    title: "Empire",
-    description: "mah",
+    id: 'p2',
+    title: 'Emp. State Building',
+    description: 'One of the most famous sky scrapers in the world!',
     imageUrl:
-      "https://www.citybreak.com/sites/cb_citybreak/files/styles/slide_large/public/ben-o-bro-wpU4veNGnHg-unsplash.jpg?h=41f55a5b&itok=xr1okfZF",
-    address: "New York Sjedinjene Američke Države",
+      'https://upload.wikimedia.org/wikipedia/commons/thumb/d/df/NYC_Empire_State_Building.jpg/640px-NYC_Empire_State_Building.jpg',
+    address: '20 W 34th St, New York, NY 10001',
     location: {
-      lat: 40.5645845,
-      lng: -74.216858,
+      lat: 40.7484405,
+      lng: -73.9878584
     },
-    creator: "u2",
-  },
+    creator: 'u2'
+  }
 ];
 
 const UserPlaces = () => {
   const userId = useParams().userId;
-  const loadPlaces = DUMMY_PLACES.filter((place) => place.creator === userId);
-  return <PlaceList items={loadPlaces} />;
+  const loadedPlaces = DUMMY_PLACES.filter(place => place.creator === userId);
+  return <PlaceList items={loadedPlaces} />;
 };
 
 export default UserPlaces;
